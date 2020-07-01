@@ -1,38 +1,40 @@
-@charset "UTF-8";
+
 
 .container {
     display: grid;
-    grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 200px 300px 200px 200px;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 200px 300px 200px 200px 200px;
     grid-template-areas: "header header header"
+                         "nav nav nav"
                          "section section section"
-                         "aside article ."
-                         ". footer .";
+                         "aside article article"
+                         "footer footer footer";
+}
+
+.header {
+    display: grid;
+    grid-area: header
+    background-color: yellow;
+   
 }
 
 .nav {
     display: grid;
-    min-height: 100px;
-    grid-auto-flow: column;
-    padding-left: 20px;
-    padding-right: 10px;
-    grid-gap: 10px;
+    grid-area: nav;
+    background-color: pink;
+        
 }
 
 #logo {
     display: grid;
-    justify-content: start;
-    align-content: center;
-    min-width: 200px;
+    justify-content: center
+    
 }
 
 #links {
     display: grid;
-    justify-content: end;
-    align-content: center;
-    grid-auto-flow: column;
-    grid-gap: 20px;
-    padding-left: 10px;
+    grid-auto-columns: column;
+    
 }
 
 a {
@@ -43,19 +45,16 @@ a:hover {
     color: #df570d;
 }
 
-.header {
-    grid-area: header
-    background-color: #df570d;
-}
-
 .section {
     grid-area: section;
-    background-color: green;
+    background-color: gray;
+    padding: 10px;
 }
 
 .article {
     grid-area: article;
-    background-color: blue;
+    background-color: brown;
+    padding: 10px;
 }
 
 .aside {
@@ -66,4 +65,5 @@ a:hover {
 .footer {
     grid-area: footer;
     background-color: #df570d;
+    padding: 10px;
 }
