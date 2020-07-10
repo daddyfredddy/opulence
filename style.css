@@ -1,40 +1,45 @@
-
+@charset "UTF-8";
 
 .container {
     display: grid;
     grid-template-columns: 15% 70% 15%;
-    grid-template-rows: 200px 300px 200px 200px 200px;
-    grid-template-areas: "header header header"
-                         "nav nav nav"
-                         "section section section"
-                         "aside article article"
-                         "footer footer footer";
+    grid-template-rows: 200px 300px 300px 200px;
+    grid-template-areas: 'header header header'
+                         'section section section'
+                         'aside article article'
+                         'footer footer footer';
 }
 
 .header {
-    display: grid;
-    grid-area: header
-    background-color: yellow;
-   
+    background-color: red;
+    grid-area: header;
 }
 
 .nav {
     display: grid;
-    grid-area: nav;
-    background-color: pink;
-        
+    background-color: white;
+    margin: 20px 160px;;
+    border-radius: 5px;
+    
+      
 }
 
 #logo {
     display: grid;
-    justify-content: center
-    
+    justify-content: start;
+    grid-column: 1/2;
+    margin: 10px;
+    grid-area: 1/1/2/2;
 }
-
+ 
 #links {
     display: grid;
-    grid-auto-columns: column;
-    
+    justify-content: end;
+    grid-auto-flow: column;
+    grid-gap: 30px;
+    grid-area: 1/1/2/span 2;
+    padding-top: 50px;
+    padding-right: 10px;
 }
 
 a {
@@ -42,28 +47,46 @@ a {
 }
 
 a:hover {
-    color: #df570d;
+    color: orange;
 }
 
 .section {
+    display: grid;
+    background-color: blue;
     grid-area: section;
-    background-color: gray;
-    padding: 10px;
-}
-
-.article {
-    grid-area: article;
-    background-color: brown;
-    padding: 10px;
+    grid-template-columns: auto auto auto auto;
+    max-height: 600px;
+    padding-left: 10px;
+    padding-left: 10px;
+    
+    
 }
 
 .aside {
+    background-color: green;
     grid-area: aside;
-    background-color: red;
+}
+
+.article {
+    background-color: brown;
+    grid-area: article;
 }
 
 .footer {
+    display: grid;
+    background-color: yellow;
     grid-area: footer;
-    background-color: #df570d;
-    padding: 10px;
+    grid-template-columns: auto auto auto auto;
+}
+
+.menu {
+    display: grid;
+    grid-auto-rows: row;
+    grid-row-gap: 20px;
+}
+
+.contact {
+    display: grid;
+    grid-auto-rows: row;
+    
 }
